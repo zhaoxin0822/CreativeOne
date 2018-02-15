@@ -7,52 +7,73 @@
         <link rel="stylesheet" href="styleform.css">
     </head>
     <body>
-    <div class= "navigation">
-        <ul>
-          <li><a  href="index.html"><font color = "lightgray">Home</font></a></li>
-          <li><a href="MercuryVenus.html"><font color = "lightgray">Mercury&Venus</font></a></li>
-          <li><a href="MarsEarth.html"><font color = "lightgray">Earth&Mars</font></a></li>
-          <li><a href="JupiterSaturn.html"><font color = "lightgray">Jupiter&Saturn</font></a></li>
-          <li><a href="UranusNeptune.html"><font color = "lightgray">Uranus&Neptune</font></a></li>
-          <li><a class = "active" href="form.html"><font color = "lightgray">FAQ(Form)</font></a></li>
-        </ul>
+    <div class='navigation'>
+    <label for="show-menu" class="show-menu">Show Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+        <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li>
+            <a href="#">Planets ￬</a>
+            <ul class="hidden">
+                <li><a href="MercuryVenus.html">Mercury</a></li>
+                <li><a href="MercuryVenus.html">Venus</a></li>
+                <li><a href="MarsEarth.html">Mars</a></li>
+                <li><a href="MarsEarth.html">Earth</a></li>
+                <li><a href="JupiterSaturn.html">Jupiter</a></li>
+                <li><a href="JupiterSaturn.html">Saturn</a></li>
+                <li><a href="UranusNeptune.html">Uranus</a></li>
+                <li><a href="UranusNeptune.html">Neptune</a></li>
+            </ul>
+        </li>
+        <li><a href="new.html">NASA daily</a></li>
+        <li><a href="Mars.html">Mars Alive</a></li>
+        <li class = "active"><a href="form.html">Contact</a></li>
+    </ul>
     </div>
     <div class="grid-container">
-      <div class="left">
-      </div>  
+      <div class="header">
+        <h1>Please Contact Me</h1>
+      </div>
       <div class="right">
         <form>
+          <p>
           <font color = "white">
           <label for="fname">First Name</label>
           </font>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
-          
+          </p>
+          <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+          <p>
           <font color = "white">
           <label for="lname">Last Name</label>
           </font>
-          <input type="text" id="fname" name="lastname" placeholder="Your name..">
-          
+          </p>
+          <input type="text" id="fname" name="lastname" placeholder="Your last name..">
+          <p>
           <font color = "white">
           <label for="lname"></label>E-Mail Address </label>
           </font>
+          </p>
           <input type="text" id="emailaddress" name="Email" placeholder="Your email address..">
-          
+          <p>
           <font color = "white">
           <label for="country">Country</label>
           </font>
+          </p>
           <select id="country" name="country">
            <option value="australia">Australia</option>
            <option value="canada">Canada</option>
            <option value="usa">USA</option>
           </select>
+          <p>
           <font color = "white">
           <input type="submit" value="Submit">
           </font>
+          </p>
         </form>
       </div>
       <div class="footer">
           <font color = "white">
-                <a href="https://github.com/zhaoxin0822/CreativeOne"><font color = "lightgray">Github</font></a>
+                <a href="https://github.com/zhaoxin0822/CreativeProject"><font color = "lightgray">Github</font></a>
           </font>
       </div>
      </div>

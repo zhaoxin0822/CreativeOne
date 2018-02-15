@@ -1,333 +1,714 @@
 body {
-    background-image: url(http://www.pbs.org/wgbh/nova/next/wp-content/uploads/2017/06/quantum-entanglement_2048x1152.jpg);
+    background-image: url(earth.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover;               
+    background-repeat:   no-repeat;
+    background-position: center center; 
 }
-
-nav {
-    background-color: rgba(0, 0, 0, 0.2);
-    font-size: 25px
-}
-
 
 ul {
-    list-style-type: none;
-    margin: 100;
-    padding: 400;
-    overflow: hidden; /* Enable scrolling if the sidenav has too much content */
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: absolute;
 }
 
-
-ul a {
-    display: block;
-    color: #000;
-    padding: 16px 32px;
+.active {
+    background-color: rgba(0, 0, 25, 0.2);
+    color: white;
+}
+/*Create a horizontal list with spacing*/
+li {
+    display:inline-block;
+    float: left;
+    margin-right: 1px;
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0);
     text-decoration: none;
 }
-
-li{
-    display: inline-block;
+/*Hover state for top level links*/
+li:hover a {
+    background: rgba(0, 0, 25, 0.2);
+}
+/*Style for dropdown links*/
+li:hover ul a {
+    background: rgba(0, 0, 25, 0.2);
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px;
+}
+/*Hover state for dropdown links*/
+li:hover ul a:hover {
+    background: rgba(0, 0, 25, 0.2);
+    color: #fff;
+}
+/*Hide dropdown links until they are needed*/
+li ul {
+    display: none;
+}
+/*Make dropdown links vertical*/
+li ul li {
+    display: block;
     float: none;
-    vertical-align: top;
-    /*display: inline;*/
-    background-color: rgba(0, 0, 0, 0.01);
+}
+/*Prevent text wrapping*/
+li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+/*Display the dropdown on hover*/
+ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+}
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(0, 0, 25, 0.2);
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
 }
 
-li .active {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: white;
-}
-/*
-this for the mouse put on it the gray one
-*/
-li a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+
+
+
+@media screen and (min-width : 760px){
+         .header { grid-area: header;
+        text-align: center;
+        padding: 50px 0;
+            }
+        .body { grid-area: body; 
+          width: auto; 
+          margin: 100px;
+          border: 6px dashed white;
+          outline: 6px solid white;
+          outline-offset: 40px;
+          text-align: center;
+          padding: 400px 0;
+          font-size: 15px;
+        }
+        .footer { grid-area: footer;
+          background-color: rgba(0, 0, 0, 0.1);
+          text-align: center;
+          padding: 5px 0;
+          font-size: 20px;
+          width: 100%;
+          height: 30px;
+        }
+        
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+          'navigations'
+          'header'
+          'body'
+          'footer';
+          grid-gap: 10px;
+          background-color: rgba(0, 0, 0, 0.01);
+        }
+        
+        .Sun{
+            position: absolute;
+            left: center;
+            top: center;
+        }
+        
+        .Mercury{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myMercury 4s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myMercury 4s linear infinite; /* Firefox 5-15 */
+            -o-animation: myMercury 4s linear infinite; /* Opera 12+ */
+            animation: myMercury 4s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myMercury {
+            from { -webkit-transform: rotate(0deg) translateX(42px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(42px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myMercury {
+            from { -moz-transform: rotate(0deg) translateX(42px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(42px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myMercury {
+            from { -o-transform: rotate(0deg) translateX(42px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(42px) rotate(-360deg); }
+        }
+        
+        @keyframes myMercury {
+            from { transform: rotate(0deg) translateX(42px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(42px) rotate(-360deg); }
+        }
+        
+        .Venus{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myVenus 8s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myVenus 8s linear infinite; /* Firefox 5-15 */
+            -o-animation: myVenus 8s linear infinite; /* Opera 12+ */
+            animation: myVenus 8s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myVenus {
+            from { -webkit-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myVenus {
+            from { -moz-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myVenus {
+            from { -o-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+        }
+        
+        @keyframes myVenus {
+            from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+        }
+        
+        .Earth{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myEarth 12s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myEarth 12s linear infinite; /* Firefox 5-15 */
+            -o-animation: myEarth 12s linear infinite; /* Opera 12+ */
+            animation: myEarth 12s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myEarth {
+            from { -webkit-transform: rotate(0deg) translateX(110px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myEarth {
+            from { -moz-transform: rotate(0deg) translateX(110px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myEarth {
+            from { -o-transform: rotate(0deg) translateX(110px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+        }
+        
+        @keyframes myEarth {
+            from { transform: rotate(0deg) translateX(110px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+        }
+        
+        .Mars{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: mayMars 16s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: mayMars 16s linear infinite; /* Firefox 5-15 */
+            -o-animation: mayMars 16s linear infinite; /* Opera 12+ */
+            animation: mayMars 16s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes mayMars {
+            from { -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes mayMars {
+            from { -moz-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes mayMars {
+            from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        
+        @keyframes mayMars {
+            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        .Jupiter{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myJup 25s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myJup 25s linear infinite; /* Firefox 5-15 */
+            -o-animation: myJup 25s linear infinite; /* Opera 12+ */
+            animation: myJup 25s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myJup {
+            from { -webkit-transform: rotate(0deg) translateX(190px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myJup {
+            from { -moz-transform: rotate(0deg) translateX(190px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myJup {
+            from { -o-transform: rotate(0deg) translateX(190px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+        }
+        
+        @keyframes myJup {
+            from { transform: rotate(0deg) translateX(190px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+        }
+        
+        .Saturn{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: mySat 24s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: mySat 24s linear infinite; /* Firefox 5-15 */
+            -o-animation: mySat 24s linear infinite; /* Opera 12+ */
+            animation: mySat 24s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes mySat {
+            from { -webkit-transform: rotate(0deg) translateX(230px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(230px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes mySat {
+            from { -moz-transform: rotate(0deg) translateX(230px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(230px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes mySat {
+            from { -o-transform: rotate(0deg) translateX(230px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(230px) rotate(-360deg); }
+        }
+        
+        @keyframes mySat {
+            from { transform: rotate(0deg) translateX(230px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(230px) rotate(-360deg); }
+        }
+        
+        .Uranus{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myUranus 28s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myUranus 28s linear infinite; /* Firefox 5-15 */
+            -o-animation: myUranus 28s linear infinite; /* Opera 12+ */
+            animation: myUranus 28s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myUranus {
+            from { -webkit-transform: rotate(0deg) translateX(270px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(270px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myUranus {
+            from { -moz-transform: rotate(0deg) translateX(270px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(270px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myUranus {
+            from { -o-transform: rotate(0deg) translateX(270px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(270px) rotate(-360deg); }
+        }
+        
+        @keyframes myUranus {
+            from { transform: rotate(0deg) translateX(270px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(270px) rotate(-360deg); }
+        }
+        
+        .Neptune{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myNeptune 32s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myNeptune 32s linear infinite; /* Firefox 5-15 */
+            -o-animation: myNeptune 32s linear infinite; /* Opera 12+ */
+            animation: myNeptune 32s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myNeptune {
+            from { -webkit-transform: rotate(0deg) translateX(310px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(310px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myNeptune {
+            from { -moz-transform: rotate(0deg) translateX(310px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(310px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myNeptune {
+            from { -o-transform: rotate(0deg) translateX(310px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(310px) rotate(-360deg); }
+        }
+        
+        @keyframes myNeptune {
+            from { transform: rotate(0deg) translateX(310px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(310px) rotate(-360deg); }
+        }
+        
 }
 
-.navigation{ grid-area: navigations;
-    width: 100%;
-     font-size: 20px;
-}
-
-.header { grid-area: header;
+@media screen and (max-width : 760px){
+    /*Make dropdown links appear inline*/
+    ul {
+        position: static;
+        display: none;
+        position: absolute;
+    }
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+        width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .show-menu {
+        display:block;
+        
+    }
+    .navigation{
+    background-color: rgba(0, 0, 0, 0);
     text-align: center;
     padding: 1px 0;
     font-size: 15px;
-}
-.body { grid-area: body; 
-  width: auto; 
-  margin: 100px;
-  border: 6px dashed white;
-  outline: 6px solid white;
-  outline-offset: 40px;
-  text-align: center;
-  padding: 400px 0;
-  font-size: 15px;
-}
-.footer { grid-area: footer;
-  background-color: rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 5px 0;
-  font-size: 20px;
-  width: 100%;
-  height: 30px;
-}
 
-.grid-container {
-  display: grid;
-  grid-template-areas:
-  'navigations'
-  'header'
-  'body'
-  'footer';
-  grid-gap: 10px;
-  background-color: rgba(0, 0, 0, 0.01);
-}
+    }
+    
+    input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+        width: 50%;
+        background-color: gray;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+    
+    
+     .header { grid-area: header;
+        text-align: center;
+        padding: 155px 0;
+        font-size: 15px;
+            }
+        .body { grid-area: body; 
+          width: auto; 
+          margin: 100px;
+          border: 6px dashed white;
+          outline: 6px solid white;
+          outline-offset: 40px;
+          text-align: center;
+          padding: 400px 0;
+          font-size: 15px;
+        }
+        .footer { grid-area: footer;
+          background-color: rgba(0, 0, 0, 0.1);
+          text-align: center;
+          padding: 5px 0;
+          font-size: 20px;
+          width: 100%;
+          height: 30px;
+        }
+        
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+          'navigations'
+          'header'
+          'body'
+          'footer';
+          grid-gap: 10px;
+          background-color: rgba(0, 0, 0, 0.01);
+        }
+        
+        .Sun{
+            position: absolute;
+            left: center;
+            top: center;
+        }
+        
+        .Mercury{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myMercury 4s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myMercury 4s linear infinite; /* Firefox 5-15 */
+            -o-animation: myMercury 4s linear infinite; /* Opera 12+ */
+            animation: myMercury 4s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myMercury {
+            from { -webkit-transform: rotate(0deg) translateX(42px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(42px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myMercury {
+            from { -moz-transform: rotate(0deg) translateX(42px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(42px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myMercury {
+            from { -o-transform: rotate(0deg) translateX(42px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(42px) rotate(-360deg); }
+        }
+        
+        @keyframes myMercury {
+            from { transform: rotate(0deg) translateX(42px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(42px) rotate(-360deg); }
+        }
+        
+        .Venus{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myVenus 8s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myVenus 8s linear infinite; /* Firefox 5-15 */
+            -o-animation: myVenus 8s linear infinite; /* Opera 12+ */
+            animation: myVenus 8s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myVenus {
+            from { -webkit-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myVenus {
+            from { -moz-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myVenus {
+            from { -o-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+        }
+        
+        @keyframes myVenus {
+            from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+        }
+        
+        .Earth{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myEarth 12s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myEarth 12s linear infinite; /* Firefox 5-15 */
+            -o-animation: myEarth 12s linear infinite; /* Opera 12+ */
+            animation: myEarth 12s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myEarth {
+            from { -webkit-transform: rotate(0deg) translateX(110px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myEarth {
+            from { -moz-transform: rotate(0deg) translateX(110px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myEarth {
+            from { -o-transform: rotate(0deg) translateX(110px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+        }
+        
+        @keyframes myEarth {
+            from { transform: rotate(0deg) translateX(110px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+        }
+        
+        .Mars{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: mayMars 16s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: mayMars 16s linear infinite; /* Firefox 5-15 */
+            -o-animation: mayMars 16s linear infinite; /* Opera 12+ */
+            animation: mayMars 16s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes mayMars {
+            from { -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes mayMars {
+            from { -moz-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes mayMars {
+            from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        
+        @keyframes mayMars {
+            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        .Jupiter{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myJup 25s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myJup 25s linear infinite; /* Firefox 5-15 */
+            -o-animation: myJup 25s linear infinite; /* Opera 12+ */
+            animation: myJup 25s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myJup {
+            from { -webkit-transform: rotate(0deg) translateX(190px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myJup {
+            from { -moz-transform: rotate(0deg) translateX(190px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myJup {
+            from { -o-transform: rotate(0deg) translateX(190px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+        }
+        
+        @keyframes myJup {
+            from { transform: rotate(0deg) translateX(190px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+        }
+        
+        .Saturn{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: mySat 24s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: mySat 24s linear infinite; /* Firefox 5-15 */
+            -o-animation: mySat 24s linear infinite; /* Opera 12+ */
+            animation: mySat 24s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes mySat {
+            from { -webkit-transform: rotate(0deg) translateX(230px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(230px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes mySat {
+            from { -moz-transform: rotate(0deg) translateX(230px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(230px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes mySat {
+            from { -o-transform: rotate(0deg) translateX(230px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(230px) rotate(-360deg); }
+        }
+        
+        @keyframes mySat {
+            from { transform: rotate(0deg) translateX(230px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(230px) rotate(-360deg); }
+        }
+        
+        .Uranus{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myUranus 28s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myUranus 28s linear infinite; /* Firefox 5-15 */
+            -o-animation: myUranus 28s linear infinite; /* Opera 12+ */
+            animation: myUranus 28s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myUranus {
+            from { -webkit-transform: rotate(0deg) translateX(270px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(270px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myUranus {
+            from { -moz-transform: rotate(0deg) translateX(270px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(270px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myUranus {
+            from { -o-transform: rotate(0deg) translateX(270px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(270px) rotate(-360deg); }
+        }
+        
+        @keyframes myUranus {
+            from { transform: rotate(0deg) translateX(270px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(270px) rotate(-360deg); }
+        }
+        
+        .Neptune{
+            position: absolute;
+            left: center;
+            top: center;
+            -webkit-animation: myNeptune 32s linear infinite; /* Chrome, Safari 5 */
+            -moz-animation: myNeptune 32s linear infinite; /* Firefox 5-15 */
+            -o-animation: myNeptune 32s linear infinite; /* Opera 12+ */
+            animation: myNeptune 32s linear infinite; /* Chrome, Firefox 16+*/
+        }
+        
+        @-webkit-keyframes myNeptune {
+            from { -webkit-transform: rotate(0deg) translateX(310px) rotate(0deg); }
+            to   { -webkit-transform: rotate(360deg) translateX(310px) rotate(-360deg); }
+        }
+        
+        @-moz-keyframes myNeptune {
+            from { -moz-transform: rotate(0deg) translateX(310px) rotate(0deg); }
+            to   { -moz-transform: rotate(360deg) translateX(310px) rotate(-360deg); }
+        }
+        
+        @-o-keyframes myNeptune {
+            from { -o-transform: rotate(0deg) translateX(310px) rotate(0deg); }
+            to   { -o-transform: rotate(360deg) translateX(310px) rotate(-360deg); }
+        }
+        
+        @keyframes myNeptune {
+            from { transform: rotate(0deg) translateX(310px) rotate(0deg); }
+            to   { transform: rotate(360deg) translateX(310px) rotate(-360deg); }
+        }
 
-.Sun{
-    position: absolute;
-    left: center;
-    top: center;
-}
-
-.Mercury{
-    position: absolute;
-    left: center;
-    top: center;
-    -webkit-animation: myMercury 4s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myMercury 4s linear infinite; /* Firefox 5-15 */
-    -o-animation: myMercury 4s linear infinite; /* Opera 12+ */
-    animation: myMercury 4s linear infinite; /* Chrome, Firefox 16+*/
-}
-
-@-webkit-keyframes myMercury {
-    from { -webkit-transform: rotate(0deg) translateX(42px) rotate(0deg); }
-    to   { -webkit-transform: rotate(360deg) translateX(42px) rotate(-360deg); }
-}
-
-@-moz-keyframes myMercury {
-    from { -moz-transform: rotate(0deg) translateX(42px) rotate(0deg); }
-    to   { -moz-transform: rotate(360deg) translateX(42px) rotate(-360deg); }
-}
-
-@-o-keyframes myMercury {
-    from { -o-transform: rotate(0deg) translateX(42px) rotate(0deg); }
-    to   { -o-transform: rotate(360deg) translateX(42px) rotate(-360deg); }
-}
-
-@keyframes myMercury {
-    from { transform: rotate(0deg) translateX(42px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(42px) rotate(-360deg); }
-}
-
-.Venus{
-    position: absolute;
-    left: center;
-    top: center;
-    -webkit-animation: myVenus 8s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myVenus 8s linear infinite; /* Firefox 5-15 */
-    -o-animation: myVenus 8s linear infinite; /* Opera 12+ */
-    animation: myVenus 8s linear infinite; /* Chrome, Firefox 16+*/
-}
-
-@-webkit-keyframes myVenus {
-    from { -webkit-transform: rotate(0deg) translateX(70px) rotate(0deg); }
-    to   { -webkit-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
-}
-
-@-moz-keyframes myVenus {
-    from { -moz-transform: rotate(0deg) translateX(70px) rotate(0deg); }
-    to   { -moz-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
-}
-
-@-o-keyframes myVenus {
-    from { -o-transform: rotate(0deg) translateX(70px) rotate(0deg); }
-    to   { -o-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
-}
-
-@keyframes myVenus {
-    from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
-}
-
-.Earth{
-    position: absolute;
-    left: center;
-    top: center;
-    -webkit-animation: myEarth 12s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myEarth 12s linear infinite; /* Firefox 5-15 */
-    -o-animation: myEarth 12s linear infinite; /* Opera 12+ */
-    animation: myEarth 12s linear infinite; /* Chrome, Firefox 16+*/
-}
-
-@-webkit-keyframes myEarth {
-    from { -webkit-transform: rotate(0deg) translateX(110px) rotate(0deg); }
-    to   { -webkit-transform: rotate(360deg) translateX(110px) rotate(-360deg); }
-}
-
-@-moz-keyframes myEarth {
-    from { -moz-transform: rotate(0deg) translateX(110px) rotate(0deg); }
-    to   { -moz-transform: rotate(360deg) translateX(110px) rotate(-360deg); }
-}
-
-@-o-keyframes myEarth {
-    from { -o-transform: rotate(0deg) translateX(110px) rotate(0deg); }
-    to   { -o-transform: rotate(360deg) translateX(110px) rotate(-360deg); }
-}
-
-@keyframes myEarth {
-    from { transform: rotate(0deg) translateX(110px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
-}
-
-.Mars{
-    position: absolute;
-    left: center;
-    top: center;
-    -webkit-animation: mayMars 16s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: mayMars 16s linear infinite; /* Firefox 5-15 */
-    -o-animation: mayMars 16s linear infinite; /* Opera 12+ */
-    animation: mayMars 16s linear infinite; /* Chrome, Firefox 16+*/
-}
-
-@-webkit-keyframes mayMars {
-    from { -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg); }
-    to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-}
-
-@-moz-keyframes mayMars {
-    from { -moz-transform: rotate(0deg) translateX(150px) rotate(0deg); }
-    to   { -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-}
-
-@-o-keyframes mayMars {
-    from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
-    to   { -o-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-}
-
-@keyframes mayMars {
-    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-}
-.Jupiter{
-    position: absolute;
-    left: center;
-    top: center;
-    -webkit-animation: myJup 25s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myJup 25s linear infinite; /* Firefox 5-15 */
-    -o-animation: myJup 25s linear infinite; /* Opera 12+ */
-    animation: myJup 25s linear infinite; /* Chrome, Firefox 16+*/
-}
-
-@-webkit-keyframes myJup {
-    from { -webkit-transform: rotate(0deg) translateX(190px) rotate(0deg); }
-    to   { -webkit-transform: rotate(360deg) translateX(190px) rotate(-360deg); }
-}
-
-@-moz-keyframes myJup {
-    from { -moz-transform: rotate(0deg) translateX(190px) rotate(0deg); }
-    to   { -moz-transform: rotate(360deg) translateX(190px) rotate(-360deg); }
-}
-
-@-o-keyframes myJup {
-    from { -o-transform: rotate(0deg) translateX(190px) rotate(0deg); }
-    to   { -o-transform: rotate(360deg) translateX(190px) rotate(-360deg); }
-}
-
-@keyframes myJup {
-    from { transform: rotate(0deg) translateX(190px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(190px) rotate(-360deg); }
-}
-
-.Saturn{
-    position: absolute;
-    left: center;
-    top: center;
-    -webkit-animation: mySat 24s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: mySat 24s linear infinite; /* Firefox 5-15 */
-    -o-animation: mySat 24s linear infinite; /* Opera 12+ */
-    animation: mySat 24s linear infinite; /* Chrome, Firefox 16+*/
-}
-
-@-webkit-keyframes mySat {
-    from { -webkit-transform: rotate(0deg) translateX(230px) rotate(0deg); }
-    to   { -webkit-transform: rotate(360deg) translateX(230px) rotate(-360deg); }
-}
-
-@-moz-keyframes mySat {
-    from { -moz-transform: rotate(0deg) translateX(230px) rotate(0deg); }
-    to   { -moz-transform: rotate(360deg) translateX(230px) rotate(-360deg); }
-}
-
-@-o-keyframes mySat {
-    from { -o-transform: rotate(0deg) translateX(230px) rotate(0deg); }
-    to   { -o-transform: rotate(360deg) translateX(230px) rotate(-360deg); }
-}
-
-@keyframes mySat {
-    from { transform: rotate(0deg) translateX(230px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(230px) rotate(-360deg); }
-}
-
-.Uranus{
-    position: absolute;
-    left: center;
-    top: center;
-    -webkit-animation: myUranus 28s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myUranus 28s linear infinite; /* Firefox 5-15 */
-    -o-animation: myUranus 28s linear infinite; /* Opera 12+ */
-    animation: myUranus 28s linear infinite; /* Chrome, Firefox 16+*/
-}
-
-@-webkit-keyframes myUranus {
-    from { -webkit-transform: rotate(0deg) translateX(270px) rotate(0deg); }
-    to   { -webkit-transform: rotate(360deg) translateX(270px) rotate(-360deg); }
-}
-
-@-moz-keyframes myUranus {
-    from { -moz-transform: rotate(0deg) translateX(270px) rotate(0deg); }
-    to   { -moz-transform: rotate(360deg) translateX(270px) rotate(-360deg); }
-}
-
-@-o-keyframes myUranus {
-    from { -o-transform: rotate(0deg) translateX(270px) rotate(0deg); }
-    to   { -o-transform: rotate(360deg) translateX(270px) rotate(-360deg); }
-}
-
-@keyframes myUranus {
-    from { transform: rotate(0deg) translateX(270px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(270px) rotate(-360deg); }
-}
-
-.Neptune{
-    position: absolute;
-    left: center;
-    top: center;
-    -webkit-animation: myNeptune 32s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myNeptune 32s linear infinite; /* Firefox 5-15 */
-    -o-animation: myNeptune 32s linear infinite; /* Opera 12+ */
-    animation: myNeptune 32s linear infinite; /* Chrome, Firefox 16+*/
-}
-
-@-webkit-keyframes myNeptune {
-    from { -webkit-transform: rotate(0deg) translateX(310px) rotate(0deg); }
-    to   { -webkit-transform: rotate(360deg) translateX(310px) rotate(-360deg); }
-}
-
-@-moz-keyframes myNeptune {
-    from { -moz-transform: rotate(0deg) translateX(310px) rotate(0deg); }
-    to   { -moz-transform: rotate(360deg) translateX(310px) rotate(-360deg); }
-}
-
-@-o-keyframes myNeptune {
-    from { -o-transform: rotate(0deg) translateX(310px) rotate(0deg); }
-    to   { -o-transform: rotate(360deg) translateX(310px) rotate(-360deg); }
-}
-
-@keyframes myNeptune {
-    from { transform: rotate(0deg) translateX(310px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(310px) rotate(-360deg); }
 }

@@ -8,17 +8,33 @@
          <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Pompiere" rel="stylesheet">
     </head>
     <body>
-    <div class= "navigation">
-        <ul>
-          <li><a href="index.html"><font color = "lightgray">Home</font></a></li>
-          <li><a href="MercuryVenus.html"><font color = "lightgray">Mercury&Venus</font></a></li>
-          <li><a class = "active" href="MarsEarth.html"><font color = "lightgray">Earth&Mars</font></a></li>
-          <li><a href="JupiterSaturn.html"><font color = "lightgray">Jupiter&Saturn</font></a></li>
-          <li><a href="UranusNeptune.html"><font color = "lightgray">Uranus&Neptune</font></a></li>
-          <li><a href="form.html"><font color = "lightgray">FAQ(Form)</font></a></li>
-        </ul>
+    <div class='navigation'>
+    <label for="show-menu" class="show-menu">Show Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+        <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li class = "active">
+            <a href="#">Planets ￬</a>
+            <ul class="hidden">
+                <li><a href="MercuryVenus.html">Mercury</a></li>
+                <li><a href="MercuryVenus.html">Venus</a></li>
+                <li class = "active"><a href="MarsEarth.html">Mars</a></li>
+                <li class = "active"><a href="MarsEarth.html">Earth</a></li>
+                <li><a href="JupiterSaturn.html">Jupiter</a></li>
+                <li><a href="JupiterSaturn.html">Saturn</a></li>
+                <li><a href="UranusNeptune.html">Uranus</a></li>
+                <li><a href="UranusNeptune.html">Neptune</a></li>
+            </ul>
+        </li>
+        <li><a href="new.html">NASA daily</a></li>
+        <li><a href="Mars.html">Mars Alive</a></li>
+        <li><a href="form.html">Contact</a></li>
+    </ul>
     </div>
     <div class="grid-container">
+        <div class= "header">
+          <h1>Mars & Earth</h1>
+      </div>
       <div class="planetOne">
           <img src = "http://www.publicdomainpictures.net/pictures/90000/velka/mars.jpg" alt = "my picture" width = 300>
       </div>
@@ -66,7 +82,7 @@
       </div>
       <div class="footer">
           <font color = "white">
-                <a href="https://github.com/zhaoxin0822/CreativeOne"><font color = "gray">Github</font></a>
+                <a href="https://github.com/zhaoxin0822/CreativeProject"><font color = "gray">Github</font></a>
               </font>
       </div>
      </div>

@@ -1,40 +1,90 @@
+/*Strip the ul of padding and list styling*/
 body {
-   background-color: black;
+ background-color: black
 }
 
 ul {
-    list-style-type: none;
-    margin: 100;
-    padding: 400;
-    overflow: hidden; /* Enable scrolling if the sidenav has too much content */
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: absolute;
 }
 
-
-ul a {
-    display: block;
-    color: #000;
-    padding: 16px 32px;
+.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+/*Create a horizontal list with spacing*/
+li {
+    display:inline-block;
+    float: left;
+    margin-right: 1px;
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0);
     text-decoration: none;
 }
-
-li{
-    display: inline-block;
+/*Hover state for top level links*/
+li:hover a {
+    background: rgba(255, 255, 255, 0.2);
+}
+/*Style for dropdown links*/
+li:hover ul a {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    height: 40px;
+    line-height: 40px;
+}
+/*Hover state for dropdown links*/
+li:hover ul a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: gray;
+}
+/*Hide dropdown links until they are needed*/
+li ul {
+    display: none;
+}
+/*Make dropdown links vertical*/
+li ul li {
+    display: block;
     float: none;
-    vertical-align: top;
-    /*display: inline;*/
-    background-color: rgba(0, 0, 0, 0.01);
 }
-
-li .active {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: white;
+/*Prevent text wrapping*/
+li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
 }
-/*
-this for the mouse put on it the gray one
-*/
-li a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+/*Display the dropdown on hover*/
+ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+}
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(0, 0, 25, 0.2);
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
 }
 
 .navigation{ grid-area: navigations;
@@ -42,51 +92,179 @@ li a:hover:not(.active) {
      font-size: 20px;
 }
 
-.planetOne { grid-area: planetOne;
-  background-color: black;
-  text-align: center;
-  padding: 50px 0;
-  font-size: 20px;
-  width: 100%;
-}.commentOne { grid-area: commentOne;
-  background-color: black;
-  text-align: justify;
-  padding: 60px 0;
-  font-size: 20px;
-  width: 90%;
-}.planetTwo { grid-area: planetTwo;
-  background-color: black;
-  text-align: center;
-  padding: 50px 0;
-  font-size: 20px;
-  width: 100%;
-}
-.commentTwo { grid-area: commentTwo;
-  background-color: black;
-  text-align: justify;
-  padding: 60px;
-  font-size: 20px;
-  width: 90%;
-}
-.footer { grid-area: footer;
-  background-color: black;
-  text-align: center;
-  padding: 5px 0;
-  font-size: 20px;
-  width: 100%;
+
+@media screen and (min-width : 760px){
+     .header { grid-area: header;
+        font-family: 'Nanum Pen Script', cursive;
+        background-color: rgba(0, 0, 0, 0);
+        text-align: center;
+        padding: 250px 0;
+        font-size: 25px;
+        color: white;
+    }
+     .planetOne { grid-area: planetOne;
+      background-color: black;
+      text-align: center;
+      padding: 50px 0;
+      font-size: 20px;
+      width: 100%;
+    }.commentOne { grid-area: commentOne;
+      background-color: black;
+      text-align: justify;
+      padding: 60px 0;
+      font-size: 20px;
+      width: 90%;
+    }.planetTwo { grid-area: planetTwo;
+      background-color: black;
+      text-align: center;
+      padding: 50px 0;
+      font-size: 20px;
+      width: 100%;
+    }
+    .commentTwo { grid-area: commentTwo;
+      background-color: black;
+      text-align: justify;
+      padding: 60px;
+      font-size: 20px;
+      width: 90%;
+    }
+    .footer { grid-area: footer;
+      background-color: black;
+      text-align: center;
+      padding: 5px 0;
+      font-size: 20px;
+      width: 100%;
+    }
+    
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+      'header header'
+      'planetOne commentOne'
+      'commentTwo planetTwo'
+      'footer footer';
+      grid-gap: 20px;
+      background-color: rgba(0, 0, 0, 0.01);
+    }
+    
+    .planetdif{
+        color: white;
+        font-family: 'Pompiere', cursive;
+    }
+   
 }
 
-.grid-container {
-  display: grid;
-  grid-template-areas:
-  'planetOne commentOne'
-  'commentTwo planetTwo'
-  'footer footer';
-  grid-gap: 20px;
-  background-color: rgba(0, 0, 0, 0.01);
-}
+@media screen and (max-width : 760px){
+    /*Make dropdown links appear inline*/
+    ul {
+        position: static;
+        display: none;
+        position: absolute;
+    }
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+        width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .show-menu {
+        display:block;
+        
+    }
+    .navigation{
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding: 1px 0;
+    font-size: 15px;
 
-.planetdif{
-    color: white;
-    font-family: 'Pompiere', cursive;
+    }
+    
+    input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+        width: 50%;
+        background-color: gray;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+    
+    .header { grid-area: header;
+        font-family: 'Nanum Pen Script', cursive;
+        background-color: rgba(0, 0, 0, 0);
+        text-align: center;
+        padding: 250px 0;
+        font-size: 25px;
+        color: white;
+    }
+     .planetOne { grid-area: planetOne;
+      background-color: black;
+      text-align: center;
+      padding: 50px 0;
+      font-size: 20px;
+      width: 100%;
+    }.commentOne { grid-area: commentOne;
+      background-color: black;
+      text-align: justify;
+      padding: 60px;
+      font-size: 20px;
+      width: 90%;
+    }.planetTwo { grid-area: planetTwo;
+      background-color: black;
+      text-align: center;
+      padding: 50px 0;
+      font-size: 20px;
+      width: 100%;
+    }
+    .commentTwo { grid-area: commentTwo;
+      background-color: black;
+      text-align: justify;
+      padding: 60px;
+      font-size: 20px;
+      width: 90%;
+    }
+    .footer { grid-area: footer;
+      background-color: black;
+      text-align: center;
+      padding: 5px 0;
+      font-size: 20px;
+      width: 100%;
+    }
+    
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+      'header'
+      'planetOne' 
+      'commentOne'
+      'planetTwo'
+      'commentTwo'
+      'footer';
+      grid-gap: 20px;
+      background-color: rgba(0, 0, 0, 0.01);
+    }
+    
+    .planetdif{
+        color: white;
+        font-family: 'Pompiere', cursive;
+    }
+
 }
