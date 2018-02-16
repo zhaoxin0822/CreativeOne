@@ -13,7 +13,7 @@ $(document).ready(function(){
 		console.log(json);
 		var results = "";
 		results += "<hr/>";
-		results += '<img src="'+json.url+'" width = 600>';
+		results += '<img class = "imageID" src="'+json.url+'">';
 		results += "<hr/>";
 		results += "<h2>" +json.title+ "</h2>";
 		results += "<hr/>";

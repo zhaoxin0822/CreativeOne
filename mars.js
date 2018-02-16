@@ -19,7 +19,7 @@ $(document).ready(function(){
 	       results += "<p>you are receiving this picture from " + item.rover.name; +"</p>";
 	       results += "<p>the landing date is " + item.rover.landing_date + " and launched on " + item.rover.launch_date + "</p>";
 	       results += "<hr/>";
-		   results += '<img src="'+item.img_src+'" width = 600>';
+		   results += '<img class = "imageID" src="'+item.img_src+'">';
 		   results += "<hr/>";
 		    $("#submitResults").html(results);
 	    }
