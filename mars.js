@@ -15,13 +15,49 @@ $(document).ready(function(){
 		console.log(json);
 		var results = "";
 		const searchResult = json.photos;
-	    item = searchResult[0];
-	       results += "<p>you are receiving this picture from " + item.rover.name; +"</p>";
-	       results += "<p>the landing date is " + item.rover.landing_date + " and launched on " + item.rover.launch_date + "</p>";
-	       results += "<hr/>";
-		   results += '<img class = "imageID" src="'+item.img_src+'">';
-		   results += "<hr/>";
-		    $("#submitResults").html(results);
+	    var size = searchResult.length;
+	    //console.log(size);
+	    if (size > 1){
+	    var item = searchResult[0];
+	    results += "<p>you are receiving this picture from " + item.rover.name; +"</p>";
+        results += "<p>the landing date is " + item.rover.landing_date + " and launched on " + item.rover.launch_date + "</p>";
+        results += "<hr/>";
+        results += "<p>This image is from " + item.camera.full_name + "</p>";
+	    results += '<img class = "imageID" src="'+item.img_src+'">';
+	    results += "<hr/>";
+	    }
+		if (size > 10){
+		item = searchResult[9];
+		results += "<p>This image is from " + item.camera.full_name + "</p>";
+		results += '<img class = "imageID" src="'+item.img_src+'">';
+		results += "<hr/>";
+		}
+		
+		if (size > 15){
+		item = searchResult[14];
+		results += "<p>This image is from " + item.camera.full_name + "</p>";
+		results += '<img class = "imageID" src="'+item.img_src+'">';
+		results += "<hr/>";
+		}
+		
+		if (size > 20){
+		item = searchResult[19];
+		results += "<p>This image is from " + item.camera.full_name + "</p>";
+		results += '<img class = "imageID" src="'+item.img_src+'">';
+		results += "<hr/>";
+		}
+		
+		if (size > 25){
+		item = searchResult[24];
+		results += "<p>This image is from " + item.camera.full_name + "</p>";
+		results += '<img class = "imageID" src="'+item.img_src+'">';
+		results += "<hr/>";
+		}
+		
+		if(size === 0){
+			results += "Ops I do not have the image for taht day!";
+		}
+		$("#submitResults").html(results);
 	    }
 	    });
     });
