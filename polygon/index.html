@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="UTF-8">
+        <title>CSS Only Navigation Menu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="polygon.css">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
+    </head>
+    <body>
+        <script type="text/x-template" id="polygraph-template">
+            <g>
+              <polygon :points="points"></polygon>
+              <circle cx="100" cy="100" r="80"></circle>
+              <axis-label
+                v-for="(stat, index) in stats"
+                :stat="stat"
+                :index="index"
+                :total="stats.length">
+              </axis-label>
+            </g>
+          </script>
+          
+          <script type="text/x-template" id="axis-label-template">
+            <text :x="point.x" :y="point.y">{{stat.label}}</text>
+         </script>
+        <div class = "grid-container">
+          <div class = "header">
+            <h1>Polygon Manipulator</h1>
+              learn some fun POLYGONS!
+          </div>
+          
+          <div class = "middle" id="demo">
+            <h2>a few Tips...</h2>
+            <p>* you can drag the tag around to change the position of the point</p>
+            <p>* you can just delete the point by click delete</p>
+            <p>* SHRINK will shrink the value of the point by / 2</p>
+            <p>* Enlarger will double the value but not bigger than 100</p>
+            <p>* CLEAR will clear out all the point and value</p>
+              <!-- use the polygon components -->
+                  <div class = "grid-containerTwo">
+                    
+                          <div class = "graph">
+                              <svg class = "myPolygon" width="200" height="200">
+                              <polygraph :stats="stats"></polygraph>
+                              </svg>
+                          </div>
+                    <!-- this is for the buttons to contrl -->
+                          <div class = "buttons">
+                                <div v-for="stat in stats">
+                                <label>{{stat.label}}</label>
+                                <input type="range" v-model="stat.value" min="0" max="100">
+                                <span style="color:white">{{stat.value}}</span>
+                                <button @click="remove(stat)" class="remove">Delete</button>
+                                </div>
+                                <p><button @click="shrink">Shrink&ensp;&ensp;&ensp;</button> <button @click="enlarge">Enlarge&ensp;&ensp;&ensp; </button> <button @click="clear">Clear&ensp;&ensp;&ensp;&ensp;</button></p>
+                                <p><button @click="trangle">Trangle &ensp;&ensp;</button> <button @click="square">Square&ensp;&ensp;&ensp;</button> <button @click="pentagon">Pentagon&ensp;</button></p>
+                                <p><button @click="hexagon">Hexagon&ensp;</button> <button @click="heptagon">Heptagon</button> <button @click="octagon">Octagon&ensp;&ensp;&ensp;</button></p>
+                                <p><button @click="nonagon">Nonagon&ensp;</button> <button @click="decagon">Decagon&ensp;</button> <button @click="dodecagon">Dodecagon</button></p>
+                          </div>
+                  
+                          <div class = "addPoint">
+                          <form id="add">
+                            <p>you can add a point here</p>
+                            <p><input name="newlabel" v-model="newLabel" placeholder = "put the name of the point"></p>
+                            <p><button @click="add">Add a Point</button></p>
+                          </form>
+                          </div>
+                          
+                          <div class = "side">
+                          </div>
+                          
+                          <div class = "sideRight">
+                          </div>
+                  </div>
+          </div>
+            
+          <div class = "footer">
+            <font color = "gray">
+                <a href="https://github.com/zhaoxin0822/CreativeProject"><font color = "white">Github</font></a>
+              </font>
+          </div>
+          
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+        <script src="polygon.js"></script>
+    </body>
+</html>

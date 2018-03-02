@@ -1,0 +1,131 @@
+body {
+    font-family: Helvetica Neue, Arial, sans-serif;
+    background-image: url(https://image.freepik.com/free-vector/abstract-low-poly-design_1048-6729.jpg);
+    background-size:     cover;                 
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+polygon {
+    fill: rgba(0, 0, 100, 0.4);
+    opacity: .75;
+    display: block;
+}
+
+circle {
+    fill: transparent;
+    stroke: white;
+    display: block;
+    margin: auto;
+}
+
+text {
+    font-size: 15px;
+    fill: WHITE;
+}
+
+svg{
+    display: block;
+    margin: auto;
+}
+
+label {
+    display: inline-block;
+    width: 20px;
+    color: white
+}
+
+.header { 
+        grid-area: header;
+        background-color: rgba(0, 100, 0, 0.1);
+        text-align: center;
+        padding: 30px 0;
+        font-size: 30px;
+        color: white;
+        font-family: 'Nanum Pen Script', cursive;
+    }
+    
+.middle { grid-area: middlebox; 
+  background-color: rgba(100, 0, 0, 0.1);
+  text-align: center;
+  padding: 50px 0;
+  font-size: 20px;
+  color: white;
+  font-family: 'Nanum Pen Script', cursive;
+}
+
+.footer { grid-area: footer;
+  background-color: rgba(0, 0, 100, 0.3);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  width: 100%;
+}
+
+.grid-container {
+  width: auto;
+  display: grid;
+  grid-template-areas:
+  'header header header header'
+  'middlebox middlebox middlebox middlebox'
+  'footer footer footer footer';
+  grid-gap: 5px;
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.buttons{
+    grid-area: button;
+    background-color: rgba(20, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+.graph{
+    grid-area: graph;
+    display: block;
+    background-color: rgba(20, 0, 0, 0.1);
+    text-align: center;
+    padding: 150px 0;
+}
+
+.addPoint{
+    grid-area: addPoint;
+    background-color: rgba(20, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 25px;
+}
+
+.side{
+    grid-area: side;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    padding: 10px 0;
+    
+}
+
+.sideRight{
+    grid-area: sideRight;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    padding: 10px 0;
+}
+.grid-containerTwo{
+  display: grid;
+  grid-template-areas:
+  'side side graph graph button button sideRight sideRight'
+  'side side graph graph button button sideRight sideRight'
+  'side side graph graph addPoint addPoint sideRight sideRight';
+  grid-gap: 5px;
+    
+}
+
+.myPolygon{
+    display: block;
+    margin: auto;
+}
+
+.remove{
+    
+}
